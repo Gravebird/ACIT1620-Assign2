@@ -1,4 +1,8 @@
 
+var notesArray = new Array();
+notesArray.push({title:"note one", body:"some text 1"});
+notesArray.push({title:"note two", body:"some text 2"});
+
 function hide_input_area() {
     var hidden_elements = document.getElementsByClassName("hidden_area");
     for (var i = 0; i < hidden_elements.length; i++) {
