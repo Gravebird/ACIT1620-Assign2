@@ -6,6 +6,19 @@ function hide_input_area() {
     }
 }
 
+function newnote_button_pressed() {
+    var hidden_elements = document.getElementsByClassName("hidden_area");
+    if (hidden_elements[0].style.display == "none") {
+        for (var i = 0; i < hidden_elements.length; i++) {
+            hidden_elements[i].style.display = "grid";
+        }
+    }
+    else {
+        var text_area = document.getElementsByTagName("textarea");
+        text_area[0].value = "";
+    }
+}
+
 function dark_light_theme() {
     var newnote_button = document.getElementById("newnote-button");
     var dark_button = document.getElementById("darktheme-button");
