@@ -4,6 +4,7 @@
         <title>ACIT 1620 Assignment 1</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../javascript/script.js"></script>
     </head>
 
     <body>
@@ -23,12 +24,12 @@
                     <button id="newnote-button">New Note</button>
                     <button id="darktheme-button">Dark Theme</button>
                 </div>
-                <div id="text-box">
+                <div id="text-box" class="hidden_area">
                     <textarea>This is a placeholder</textarea>
                 </div>
                 <div id="bottom-buttons">
-                    <button id="save-button">Save</button>
-                    <button id="cancel-button">Cancel</button>
+                    <button id="save-button" class="hidden_area">Save</button>
+                    <button id="cancel-button" class="hidden_area" onclick="hide_input_area()">Cancel</button>
                 </div>
             </div>
         </content>
