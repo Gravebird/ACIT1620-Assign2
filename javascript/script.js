@@ -23,6 +23,42 @@ function newnote_button_pressed() {
     }
 }
 
+function save_button_pressed() {
+    var text_area = document.getElementsByTagName("textarea");
+    var user_input = text_area[0].value.split('\n');
+    var the_title = ""
+    var the_contents = "";
+
+    if (user_input[0] != "") {
+        console.log(user_input[0]);
+        for (var i = 0; i < user_input.length; i++) {
+            if (i == 0) {
+                the_title = user_input[i];
+            }
+            else {
+                the_contents += user_input[i] + '\n';
+            }
+        }
+        notesArray.push({title: the_title, body: the_contents});
+        notes_list = document.getElementById("note-list");
+        var list_item = document.createElement("li");
+        var link = document.createElement("a");
+        link.innerHTML = '<a href="#" onclick="list_item_clicked(this.text)">' + the_title + '</a>';
+        list_item.append(link);
+        notes_list.append(list_item);
+    }
+}
+
+function list_item_clicked(source) {
+    var text_area = document.getElementsByTagName("textarea");
+    for (var i = 0; i < notesArray.length; i++) {
+        if (notesArray[i].title == source) {
+            text_area[0].value = notesArray[i].title + '\n' + notesArray[i].body;
+            break;
+        }
+    }
+}
+
 function dark_light_theme() {
     var newnote_button = document.getElementById("newnote-button");
     var dark_button = document.getElementById("darktheme-button");

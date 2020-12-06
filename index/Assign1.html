@@ -13,9 +13,9 @@
         </header>
         <aside>
             <h2>My Notes</h2>
-            <ul>
-                <li>note one</li>
-                <li>note two</li>
+            <ul id="note-list">
+                <li><a href="#" onclick="list_item_clicked(this.text)">note one</a></li>
+                <li><a href="#" onclick="list_item_clicked(this.text)">note two</a></li>
             </ul>
         </aside>
         <content>
@@ -28,7 +28,7 @@
                     <textarea>This is a placeholder</textarea>
                 </div>
                 <div id="bottom-buttons">
-                    <button id="save-button" class="hidden_area">Save</button>
+                    <button id="save-button" class="hidden_area" onclick="save_button_pressed()">Save</button>
                     <button id="cancel-button" class="hidden_area" onclick="hide_input_area()">Cancel</button>
                 </div>
             </div>
